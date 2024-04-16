@@ -219,19 +219,19 @@ def getData():
 # Add nodes and edges to the graph
 
 def add_nodes_and_edges(graph, data, parent_node=None, parent_relation=None):
-    for baba_node in data.get("children"):
-        baba=baba_node.get("node1")
-        baba_relation=baba_node.get("relation")
-        if baba is not None:
-            graph.add_node(baba,label=baba)
-            graph.add_edge(parent_node, baba,label=parent_relation)
+    for main_parent_node in data.get("children"):
+        main_parent=main_parent_node.get("node1")
+        main_parent_relation=main_parent_node.get("relation")
+        if main_parent is not None:
+            graph.add_node(main_parent,label=main_parent)
+            graph.add_edge(parent_node, main_parent,label=parent_relation)
 
-            for child_node in baba_node.get("children"):
+            for child_node in main_parent_node.get("children"):
                 child=child_node.get("node1")
                 child_relation=child_node.get("relation")
                 if child is not None:
                     graph.add_node(child,label=child)
-                    graph.add_edge(baba, child,label=baba_relation)
+                    graph.add_edge(main_parent, child,label=main_parent_relation)
 
                     for grandchild_node in child_node.get("children"):
                         grandchild=grandchild_node.get("node1")
