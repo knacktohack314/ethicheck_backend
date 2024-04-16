@@ -23,6 +23,19 @@ pip install -r requirements.txt
 python app.py
 ```
 
+### Sample Credentials to run
+> User login credentials
+```
+username : amit45
+password : amit@das
+```
+> Admin login credentials
+```
+username : admin
+password: toor@admin
+secretcode : 123
+```
+
 ### The endpoints used 
 
 > /upload
@@ -40,11 +53,7 @@ python app.py
 > /analytics
 : In this route the analytics (day/week wise and user wise) are handled in admin portal 
 
-### Sample Credentials to run 
-```
-username : amit45
-password : amit@das
-```
+
 ### Backend High Level Design
 
 ![backend_HLD](https://github.com/knacktohack314/backend/assets/86544278/42e3b619-695b-453b-91b7-640b6e79d373)
